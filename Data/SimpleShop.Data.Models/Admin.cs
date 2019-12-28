@@ -1,0 +1,23 @@
+﻿namespace SimpleShop.Data.Models
+{
+    using System.ComponentModel.DataAnnotations;
+
+    using static ValidationConstants.Admin;
+
+    public class Admin
+    {
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(UsernameMaxLength)]
+        public string Username { get; set; }
+
+        [Required]
+        [MinLength(PasswordMinLength), MaxLength(PasswordMaxLength)]
+        public string Password { get; set; }
+
+        [Required]
+        [MaxLength(NameMaxLength)]
+        public string Name { get; set; }
+    }
+}
