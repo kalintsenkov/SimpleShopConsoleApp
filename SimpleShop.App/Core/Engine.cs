@@ -74,6 +74,8 @@
             sb.AppendLine("-- ListBlackFridayProducts");
             sb.AppendLine("-- AddMoney");
             sb.AppendLine("-- BuyProduct");
+            sb.AppendLine("-- LastPurchases");
+            sb.AppendLine("-- ViewBalance");
             sb.AppendLine();
             sb.AppendLine("-- Logout");
             sb.AppendLine("-- Exit");

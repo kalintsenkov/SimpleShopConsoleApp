@@ -1,22 +1,30 @@
 ﻿namespace SimpleShop.Services
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using AutoMapper;
+    using AutoMapper.QueryableExtensions;
     using Contracts;
     using Data;
     using Data.Models;
+    using Services.Models.ProductOrder;
 
     public class ProductOrderService : IProductOrderService
     {
         private readonly ShopDbContext data;
+        private readonly IMapper mapper;
         private readonly IUserService userService;
         private readonly IProductService productService;
 
         public ProductOrderService(
-            ShopDbContext data,
-            IUserService userService,
+            ShopDbContext data, 
+            IMapper mapper, 
+            IUserService userService, 
             IProductService productService)
         {
             this.data = data;
+            this.mapper = mapper;
             this.userService = userService;
             this.productService = productService;
         }
@@ -48,5 +56,12 @@
 
             this.data.SaveChanges();
         }
+
+        public IEnumerable<ProductOrderListingServiceModel> LastPurchases(int userId)
+            => this.data.ProductsOrders
+                .Where(po => po.Order.UserId == userId)
+                .OrderByDescending(po => po.Order.Date.Year)
+                .ProjectTo<ProductOrderListingServiceModel>(this.mapper.ConfigurationProvider)
+                .Take(10);
     }
 }

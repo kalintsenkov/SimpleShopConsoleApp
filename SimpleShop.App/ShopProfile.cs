@@ -3,6 +3,7 @@
     using AutoMapper;
     using Data.Models;
     using Services.Models.Product;
+    using Services.Models.ProductOrder;
     using Services.Models.User;
 
     public class ShopProfile : Profile
@@ -13,7 +14,9 @@
 
             CreateMap<Product, ProductServiceModel>();
             CreateMap<Product, ProductListingServiceModel>()
-                .ForMember(x => x.Category, y => y.MapFrom(src => src.Category.Name));
+                .ForMember(dest => dest.Category, y => y.MapFrom(src => src.Category.Name));
+
+            CreateMap<ProductOrder, ProductOrderListingServiceModel>();
         }
     }
 }
