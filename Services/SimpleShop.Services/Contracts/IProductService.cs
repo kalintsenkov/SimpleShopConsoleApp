@@ -21,7 +21,7 @@
 
         void Delete(int productId);
 
-        void StartBlackFridayByCategory(int categoryId, decimal discountPercentage);
+        void StartBlackFriday(int categoryId, decimal discountPercentage);
 
         void StopBlackFriday();
         

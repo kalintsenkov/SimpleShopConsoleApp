@@ -133,7 +133,7 @@
             this.data.SaveChanges();
         }
 
-        public void StartBlackFridayByCategory(int categoryId, decimal discountPercentage)
+        public void StartBlackFriday(int categoryId, decimal discountPercentage)
         {
             var products = this.data.Products
                 .Where(p => p.CategoryId == categoryId)

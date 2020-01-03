@@ -45,7 +45,7 @@
                 return $"Category '{categoryName}' cannot be found.";
             }
 
-            this.productService.StartBlackFridayByCategory(category.Id, discountPercentage);
+            this.productService.StartBlackFriday(category.Id, discountPercentage);
 
             return $"Successfully started Black Friday campaign. {discountPercentage}% OFF on {categoryName}!";
         }

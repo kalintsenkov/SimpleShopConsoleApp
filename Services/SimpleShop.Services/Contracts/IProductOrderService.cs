@@ -1,7 +1,7 @@
 ﻿namespace SimpleShop.Services.Contracts
 {
     using System.Collections.Generic;
-    using Services.Models.ProductOrder;
+    using Models.ProductOrder;
 
     public interface IProductOrderService
     {
