@@ -8,7 +8,7 @@
     using Contracts;
     using Data;
     using Data.Models;
-    using Services.Models.ProductOrder;
+    using Models.ProductOrder;
 
     public class ProductOrderService : IProductOrderService
     {
