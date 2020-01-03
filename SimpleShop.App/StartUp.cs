@@ -2,10 +2,10 @@
 {
     using System;
 
+    using AutoMapper;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
 
-    using AutoMapper;
     using Commands;
     using Commands.Contracts;
     using Core;
