@@ -61,6 +61,8 @@
             => this.data.ProductsOrders
                 .Where(po => po.Order.UserId == userId)
                 .OrderByDescending(po => po.Order.Date.Year)
+                .ThenByDescending(po => po.Order.Date.Month)
+                .ThenByDescending(po => po.Order.Date.Day)
                 .ProjectTo<ProductOrderListingServiceModel>(this.mapper.ConfigurationProvider)
                 .Take(10);
     }
