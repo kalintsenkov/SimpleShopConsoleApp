@@ -175,13 +175,6 @@
             this.data.SaveChanges();
         }
 
-        public int GetProductQuantity(int productId)
-        {
-            var product = this.FindById(productId);
-
-            return product.Quantity;
-        }
-
         public IEnumerable<ProductListingServiceModel> GetAllAvailableProducts()
             => this.data.Products
                 .Where(p => p.Quantity > 0)

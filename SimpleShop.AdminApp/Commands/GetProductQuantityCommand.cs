@@ -40,7 +40,7 @@
                 return $"Product '{productName}' cannot be found.";
             }
 
-            var productQuantity = this.productService.GetProductQuantity(product.Id);
+            var productQuantity = product.Quantity;
 
             return $"{productName} - {productQuantity} quantity";
         }

@@ -24,8 +24,6 @@
         void StartBlackFriday(int categoryId, decimal discountPercentage);
 
         void StopBlackFriday();
-        
-        int GetProductQuantity(int productId);
 
         IEnumerable<ProductListingServiceModel> GetAllAvailableProducts();
 
