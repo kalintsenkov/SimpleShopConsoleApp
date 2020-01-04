@@ -45,7 +45,7 @@
 
             this.productService.EditMinimalPrice(product.Id, newMinimalPrice);
 
-            return $"Successfully updated {productName}'s minimal price to {newMinimalPrice:F2}";
+            return $"Successfully updated {productName}'s minimal price to {newMinimalPrice:F2}$";
         }
     }
 }
