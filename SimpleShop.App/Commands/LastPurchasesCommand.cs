@@ -34,7 +34,7 @@
                 return "You did not buy any products!";
             }
 
-            var totalPrice = lastPurchases.Sum(p => p.ProductPrice);
+            var totalPrice = lastPurchases.Sum(p => p.ProductPrice * p.Quantity);
 
             var sb = new StringBuilder();
 
@@ -43,7 +43,7 @@
                 sb.AppendLine($"{purchase.OrderId}. {purchase.ProductName} <-> {purchase.Quantity} pieces <-> {purchase.ProductPrice:F2}$ each.");
             }
 
-            sb.AppendLine($"Total Price: {totalPrice:F2}$");
+            sb.AppendLine($"Total spent: {totalPrice:F2}$");
 
             return sb.ToString().TrimEnd();
         }
