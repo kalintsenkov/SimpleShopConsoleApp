@@ -37,7 +37,7 @@
 
             this.userService.AddMoney(user.Id, money);
 
-            return $"You successfully added ${money} to your balance";
+            return $"You successfully added {money}$ to your balance";
         }
     }
 }
