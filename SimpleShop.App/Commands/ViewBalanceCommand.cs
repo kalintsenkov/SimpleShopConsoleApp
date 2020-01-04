@@ -29,7 +29,7 @@
 
             var balance = user.Balance;
 
-            return $"Your balance is {balance:F2}";
+            return $"Your balance is {balance:F2}$";
         }
     }
 }
