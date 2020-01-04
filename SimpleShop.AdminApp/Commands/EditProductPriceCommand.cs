@@ -45,7 +45,7 @@
 
             this.productService.EditActualPrice(product.Id, newProductPrice);
 
-            return $"Successfully updated {productName}'s price to {newProductPrice:F2}";
+            return $"Successfully updated {productName}'s price to {newProductPrice:F2}$";
         }
     }
 }
