@@ -49,7 +49,7 @@
 
             this.productOrderService.Create(product.Id, user.Id, quantity);
 
-            return $"You successfully bought {quantity} pieces of {productName}. Total price: {quantity * product.Price:F2}";
+            return $"You successfully bought {quantity} pieces of {productName}. Total price: {quantity * product.Price:F2}$";
         }
     }
 }
