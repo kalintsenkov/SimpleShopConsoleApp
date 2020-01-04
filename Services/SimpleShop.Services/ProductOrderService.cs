@@ -1,6 +1,5 @@
 ﻿namespace SimpleShop.Services
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using AutoMapper;
@@ -15,17 +14,20 @@
         private readonly ShopDbContext data;
         private readonly IMapper mapper;
         private readonly IUserService userService;
+        private readonly IOrderService orderService;
         private readonly IProductService productService;
 
         public ProductOrderService(
             ShopDbContext data, 
             IMapper mapper, 
             IUserService userService, 
+            IOrderService orderService, 
             IProductService productService)
         {
             this.data = data;
             this.mapper = mapper;
             this.userService = userService;
+            this.orderService = orderService;
             this.productService = productService;
         }
 
@@ -33,11 +35,7 @@
         {
             var product = this.productService.FindById(productId);
 
-            var order = new Order
-            {
-                Date = DateTime.Now,
-                UserId = userId
-            };
+            var order = this.orderService.Create(userId);
 
             var productOrder = new ProductOrder
             {

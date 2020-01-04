@@ -41,6 +41,7 @@
             serviceCollection.AddTransient<IConsoleWriter, ConsoleWriter>();
             serviceCollection.AddTransient<ICommandParser, CommandParser>();
             serviceCollection.AddTransient<ICategoryService, CategoryService>();
+            serviceCollection.AddTransient<IOrderService, OrderService>();
             serviceCollection.AddTransient<IProductOrderService, ProductOrderService>();
             serviceCollection.AddTransient<IProductService, ProductService>();
             serviceCollection.AddTransient<IUserService, UserService>();
