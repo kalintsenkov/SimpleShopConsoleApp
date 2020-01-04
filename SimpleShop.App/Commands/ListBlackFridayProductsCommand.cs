@@ -39,12 +39,12 @@
 
             foreach (var group in blackFridayProducts)
             {
-                sb.AppendLine($"--Category {group.Key}");
+                sb.AppendLine($"--Category: {group.Key}");
 
                 foreach (var product in group)
                 {
                     sb.AppendLine($"   Name: {product.Name}");
-                    sb.AppendLine($"   Price: {product.Price:F2}");
+                    sb.AppendLine($"   Price: {product.Price:F2}$");
                     sb.AppendLine($"   Quantity: {product.Quantity}");
                     sb.AppendLine($"   Description: {(string.IsNullOrWhiteSpace(product.Description) ? "No Description" : product.Description)}");
                     sb.AppendLine();
