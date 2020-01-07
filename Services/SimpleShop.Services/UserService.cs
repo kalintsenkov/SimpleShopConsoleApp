@@ -59,8 +59,7 @@
 
         public void AddMoney(int userId, decimal money)
         {
-            var user = this.data.Users
-                .FirstOrDefault(u => u.Id == userId);
+            var user = this.data.Users.First(u => u.Id == userId);
 
             if (money <= 0)
             {
@@ -74,8 +73,7 @@
 
         public void ReduceMoney(int userId, decimal money)
         {
-            var user = this.data.Users
-                .FirstOrDefault(u => u.Id == userId);
+            var user = this.data.Users.First(u => u.Id == userId);
 
             if (user.Balance - money < 0)
             {
