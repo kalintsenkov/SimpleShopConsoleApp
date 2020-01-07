@@ -45,7 +45,7 @@
                 {
                     sb.AppendLine($"   Name: {product.Name}");
                     sb.AppendLine($"   Price: {product.Price:F2}$");
-                    sb.AppendLine($"   Minimal Price: {product.MinimalPrice:F2}");
+                    sb.AppendLine($"   Minimal Price: {product.MinimalPrice:F2}$");
                     sb.AppendLine($"   Quantity: {product.Quantity}");
                     sb.AppendLine($"   Description: {(string.IsNullOrWhiteSpace(product.Description) ? "No Description" : product.Description)}");
                     sb.AppendLine();
