@@ -1,4 +1,4 @@
-﻿namespace SimpleShop.Utilities
+﻿namespace SimpleShop.Services.Utilities
 {
     using System;
     using Data.Models;

@@ -1,4 +1,4 @@
-﻿namespace SimpleShop.Utilities
+﻿namespace SimpleShop.Services.Utilities
 {
     public class AdminExceptionMessages
     {
