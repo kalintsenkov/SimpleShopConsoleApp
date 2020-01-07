@@ -59,8 +59,7 @@
 
         public void EditActualPrice(int productId, decimal newPrice)
         {
-            var product = this.data.Products
-                .FirstOrDefault(p => p.Id == productId);
+            var product = this.data.Products.First(p => p.Id == productId);
 
             if (newPrice <= 0)
             {
@@ -74,8 +73,7 @@
 
         public void EditMinimalPrice(int productId, decimal newMinimalPrice)
         {
-            var product = this.data.Products
-                .FirstOrDefault(p => p.Id == productId);
+            var product = this.data.Products.First(p => p.Id == productId);
 
             if (newMinimalPrice <= 0)
             {
@@ -89,8 +87,7 @@
 
         public void ReduceQuantity(int productId, int quantity)
         {
-            var product = this.data.Products
-                .FirstOrDefault(p => p.Id == productId);
+            var product = this.data.Products.First(p => p.Id == productId);
 
             if (quantity <= 0)
             {
@@ -111,8 +108,7 @@
 
         public void IncreaseQuantity(int productId, int quantity)
         {
-            var product = this.data.Products
-                .FirstOrDefault(p => p.Id == productId);
+            var product = this.data.Products.First(p => p.Id == productId);
 
             if (quantity <= 0)
             {
@@ -126,8 +122,7 @@
 
         public void Delete(int productId)
         {
-            var product = this.data.Products
-                .FirstOrDefault(p => p.Id == productId);
+            var product = this.data.Products.First(p => p.Id == productId);
 
             this.data.Products.Remove(product);
             this.data.SaveChanges();
