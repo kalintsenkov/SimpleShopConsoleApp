@@ -27,7 +27,9 @@
 
             var userId = this.userSessionService.User.Id;
 
-            var lastPurchases = this.productOrderService.LastPurchases(userId);
+            var lastPurchases = this.productOrderService
+                .LastPurchases(userId)
+                .ToArray();
 
             if (!lastPurchases.Any())
             {
