@@ -46,8 +46,8 @@
 
             var totalProductsPrice = product.Price * quantity;
 
-            this.productService.ReduceQuantity(productId, quantity);
             this.userService.ReduceMoney(userId, totalProductsPrice);
+            this.productService.ReduceQuantity(productId, quantity);
 
             this.data.Orders.Add(order);
             this.data.ProductsOrders.Add(productOrder);
