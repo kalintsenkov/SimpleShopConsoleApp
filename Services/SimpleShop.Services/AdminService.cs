@@ -22,7 +22,8 @@
 
         public AdminServiceModel FindByUsernameAndPassword(string username, string password)
             => this.data.Admins
-                .Where(a => a.Username == username && a.Password == password)
+                .Where(a => a.Username.ToLower() == username.ToLower() 
+                            && a.Password == password)
                 .ProjectTo<AdminServiceModel>(this.mapper.ConfigurationProvider)
                 .FirstOrDefault();
 
