@@ -35,7 +35,8 @@
 
         public UserServiceModel FindByUsernameAndPassword(string username, string password)
             => this.data.Users
-                .Where(u => u.Username == username && u.Password == password)
+                .Where(u => u.Username.ToLower() == username.ToLower() 
+                            && u.Password == password)
                 .ProjectTo<UserServiceModel>(this.mapper.ConfigurationProvider)
                 .FirstOrDefault();
 
