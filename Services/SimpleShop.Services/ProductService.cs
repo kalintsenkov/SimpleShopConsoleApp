@@ -128,6 +128,9 @@
             this.data.SaveChanges();
         }
 
+        public bool Exists(string productName)
+            => this.data.Products.Any(p => p.Name == productName);
+
         public void StartBlackFriday(int categoryId, decimal discountPercentage)
         {
             var products = this.data.Products

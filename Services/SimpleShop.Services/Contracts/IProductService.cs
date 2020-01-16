@@ -21,6 +21,8 @@
 
         void Delete(int productId);
 
+        bool Exists(string productName);
+
         void StartBlackFriday(int categoryId, decimal discountPercentage);
 
         void StopBlackFriday();
