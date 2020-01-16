@@ -46,6 +46,13 @@
             this.writer.Write("Enter product's description: ");
             var description = this.reader.ReadLine();
 
+            var existingProduct = this.productService.FindByName(name);
+
+            if (existingProduct != null)
+            {
+                return $"Product '{name}' already exists.";
+            }
+
             var category = this.categoryService.FindByName(categoryName);
 
             if (category == null)
