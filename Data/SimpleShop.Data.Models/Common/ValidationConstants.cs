@@ -1,4 +1,4 @@
-﻿namespace SimpleShop.Data.Models
+﻿namespace SimpleShop.Data.Models.Common
 {
     public static class ValidationConstants
     {

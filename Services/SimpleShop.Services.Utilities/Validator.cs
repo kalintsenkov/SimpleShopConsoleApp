@@ -1,7 +1,7 @@
 ﻿namespace SimpleShop.Services.Utilities
 {
     using System;
-    using Data.Models;
+    using Data.Models.Common;
 
     public static class Validator
     {

@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using static ValidationConstants.Admin;
+    using static Common.ValidationConstants.Admin;
 
     public class Admin
     {

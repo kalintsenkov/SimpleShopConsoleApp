@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    using static ValidationConstants.Product;
+    using static Common.ValidationConstants.Product;
 
     public class Product
     {
