@@ -34,6 +34,24 @@
                 .ProjectTo<ProductServiceModel>(this.mapper.ConfigurationProvider)
                 .FirstOrDefault();
 
+        public IEnumerable<ProductListingServiceModel> GetAllAvailableProducts()
+            => this.data.Products
+                .Where(p => p.Quantity > 0)
+                .ProjectTo<ProductListingServiceModel>(this.mapper.ConfigurationProvider)
+                .OrderBy(p => p.Category)
+                .ThenBy(p => p.Name)
+                .ThenByDescending(p => p.Price)
+                .ThenByDescending(p => p.Quantity);
+
+        public IEnumerable<ProductListingServiceModel> GetAllBlackFridayProducts()
+            => this.data.Products
+                .Where(p => p.IsOnBlackFriday)
+                .ProjectTo<ProductListingServiceModel>(this.mapper.ConfigurationProvider)
+                .OrderBy(p => p.Category)
+                .ThenBy(p => p.Name)
+                .ThenByDescending(p => p.Price)
+                .ThenByDescending(p => p.Quantity);
+
         public ProductServiceModel Create(string name, int quantity, decimal price, decimal minimalPrice, int categoryId, string description)
         {
             Validator.ValidateProduct(name, quantity, price, minimalPrice);
@@ -172,23 +190,5 @@
 
             this.data.SaveChanges();
         }
-
-        public IEnumerable<ProductListingServiceModel> GetAllAvailableProducts()
-            => this.data.Products
-                .Where(p => p.Quantity > 0)
-                .ProjectTo<ProductListingServiceModel>(this.mapper.ConfigurationProvider)
-                .OrderBy(p => p.Category)
-                .ThenBy(p => p.Name)
-                .ThenByDescending(p => p.Price)
-                .ThenByDescending(p => p.Quantity);
-
-        public IEnumerable<ProductListingServiceModel> GetAllBlackFridayProducts()
-            => this.data.Products
-                .Where(p => p.IsOnBlackFriday)
-                .ProjectTo<ProductListingServiceModel>(this.mapper.ConfigurationProvider)
-                .OrderBy(p => p.Category)
-                .ThenBy(p => p.Name)
-                .ThenByDescending(p => p.Price)
-                .ThenByDescending(p => p.Quantity);
     }
 }

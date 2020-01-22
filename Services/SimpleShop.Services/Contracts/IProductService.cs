@@ -9,6 +9,10 @@
 
         ProductServiceModel FindByName(string productName);
 
+        IEnumerable<ProductListingServiceModel> GetAllAvailableProducts();
+
+        IEnumerable<ProductListingServiceModel> GetAllBlackFridayProducts();
+
         ProductServiceModel Create(string name, int quantity, decimal price, decimal minimalPrice, int categoryId, string description);
 
         void EditActualPrice(int productId, decimal newPrice);
@@ -26,9 +30,5 @@
         void StartBlackFriday(int categoryId, decimal discountPercentage);
 
         void StopBlackFriday();
-
-        IEnumerable<ProductListingServiceModel> GetAllAvailableProducts();
-
-        IEnumerable<ProductListingServiceModel> GetAllBlackFridayProducts();
     }
 }
