@@ -103,7 +103,7 @@
             {
                 throw new ArgumentException(
                     string.Format(
-                        CategoryExceptionMessages.InvalidCategoryNameLength,
+                        CategoryExceptionMessages.InvalidNameLength,
                         ValidationConstants.Category.NameMaxLength));
             }
         }
