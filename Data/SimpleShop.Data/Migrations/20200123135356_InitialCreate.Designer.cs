@@ -10,7 +10,7 @@ using SimpleShop.Data;
 namespace SimpleShop.Data.Migrations
 {
     [DbContext(typeof(ShopDbContext))]
-    [Migration("20191228114456_InitialCreate")]
+    [Migration("20200123135356_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
