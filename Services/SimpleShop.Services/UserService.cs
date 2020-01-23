@@ -82,8 +82,6 @@
             }
 
             user.Balance -= money;
-
-            this.data.SaveChanges();
         }
     }
 }
