@@ -33,6 +33,8 @@
 
         public void Create(int productId, int userId, int quantity)
         {
+            using var transaction = this.data.Database.BeginTransaction();
+
             var product = this.productService.FindById(productId);
 
             var order = this.orderService.Create(userId);
@@ -53,6 +55,8 @@
             this.data.ProductsOrders.Add(productOrder);
 
             this.data.SaveChanges();
+
+            transaction.Commit();
         }
 
         public IEnumerable<ProductOrderListingServiceModel> LastPurchases(int userId)

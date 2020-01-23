@@ -122,6 +122,8 @@
             }
 
             product.Quantity -= quantity;
+
+            this.data.SaveChanges();
         }
 
         public void IncreaseQuantity(int productId, int quantity)
