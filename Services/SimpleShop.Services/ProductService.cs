@@ -170,6 +170,7 @@
 
                 if (productNewPrice < product.MinimalPrice)
                 {
+                    this.EditActualPrice(product.Id, product.MinimalPrice);
                     continue;
                 }
 
