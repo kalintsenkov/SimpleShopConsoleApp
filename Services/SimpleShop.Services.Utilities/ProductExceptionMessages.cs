@@ -22,5 +22,8 @@
 
         public const string NotEnoughPieces
             = "We don't have {0} pieces of {1}";
+
+        public const string ActualPriceCannotBeLessThanMinimalPrice
+            = "Actual price cannot be less than minimal price!";
     }
 }

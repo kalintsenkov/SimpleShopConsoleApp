@@ -141,6 +141,12 @@
                 throw new ArgumentException(
                     ProductExceptionMessages.InvalidMinimalPrice);
             }
+
+            if (price < minimalPrice)
+            {
+                throw new ArgumentException(
+                    ProductExceptionMessages.ActualPriceCannotBeLessThanMinimalPrice);
+            }
         }
     }
 }
