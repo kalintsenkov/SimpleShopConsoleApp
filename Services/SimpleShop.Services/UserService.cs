@@ -76,6 +76,9 @@
         {
             var user = this.data.Users.First(u => u.Id == userId);
 
+            // This avoids wrong cached info in DbContext about user's balance
+            this.data.Entry(user).Reload();
+
             if (user.Balance - money < 0)
             {
                 throw new ArgumentException(UserExceptionMessages.NotEnoughMoney);
