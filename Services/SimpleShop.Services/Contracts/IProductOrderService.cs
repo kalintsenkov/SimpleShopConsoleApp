@@ -5,7 +5,7 @@
 
     public interface IProductOrderService
     {
-        void Create(int productId, int userId, int quantity);
+        void Create(int productId, int userId, int quantity, decimal productPrice);
 
         IEnumerable<ProductOrderListingServiceModel> LastPurchases(int userId);
     }

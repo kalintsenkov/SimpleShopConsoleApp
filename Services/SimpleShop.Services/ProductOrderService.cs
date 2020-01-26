@@ -31,11 +31,9 @@
             this.productService = productService;
         }
 
-        public void Create(int productId, int userId, int quantity)
+        public void Create(int productId, int userId, int quantity, decimal productPrice)
         {
             using var transaction = this.data.Database.BeginTransaction();
-
-            var product = this.productService.FindById(productId);
 
             var order = this.orderService.Create(userId);
 
@@ -46,7 +44,7 @@
                 Quantity = quantity
             };
 
-            var totalProductsPrice = product.Price * quantity;
+            var totalProductsPrice = productPrice * quantity;
 
             this.userService.ReduceMoney(userId, totalProductsPrice);
             this.productService.ReduceQuantity(productId, quantity);
