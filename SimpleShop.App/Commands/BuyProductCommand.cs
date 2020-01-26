@@ -47,9 +47,9 @@
                 return $"Product '{productName}' cannot be found.";
             }
 
-            this.productOrderService.Create(product.Id, user.Id, quantity, product.Price);
+            var totalPrice = this.productOrderService.Create(product.Id, user.Id, quantity, product.Price);
 
-            return $"You successfully bought {quantity} pieces of {productName}. Total price: {quantity * product.Price:F2}$";
+            return $"You successfully bought {quantity} pieces of {productName}. Total price: {totalPrice:F2}$";
         }
     }
 }

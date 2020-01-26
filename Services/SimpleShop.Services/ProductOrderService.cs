@@ -31,7 +31,7 @@
             this.productService = productService;
         }
 
-        public void Create(int productId, int userId, int quantity, decimal productPrice)
+        public decimal Create(int productId, int userId, int quantity, decimal productPrice)
         {
             using var transaction = this.data.Database.BeginTransaction();
 
@@ -55,6 +55,8 @@
             this.data.SaveChanges();
 
             transaction.Commit();
+
+            return totalProductsPrice;
         }
 
         public IEnumerable<ProductOrderListingServiceModel> LastPurchases(int userId)
