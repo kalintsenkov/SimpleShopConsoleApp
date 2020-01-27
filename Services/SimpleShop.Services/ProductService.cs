@@ -13,6 +13,9 @@
 
     public class ProductService : IProductService
     {
+        private const int MinDiscountPercent = 0;
+        private const int MaxDiscountPercent = 100;
+
         private readonly ShopDbContext data;
         private readonly IMapper mapper;
 
@@ -157,7 +160,7 @@
                 .Where(p => p.CategoryId == categoryId)
                 .ToList();
 
-            if (discountPercentage < 0 || discountPercentage > 100)
+            if (discountPercentage < MinDiscountPercent || discountPercentage > MaxDiscountPercent)
             {
                 throw new ArgumentException(ProductExceptionMessages.InvalidDiscountPercentage);
             }
