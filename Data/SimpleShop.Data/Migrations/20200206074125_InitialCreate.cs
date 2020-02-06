@@ -14,7 +14,7 @@
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(maxLength: 30, nullable: false),
-                    Password = table.Column<string>(maxLength: 30, nullable: false),
+                    Password = table.Column<string>(nullable: false),
                     Name = table.Column<string>(maxLength: 30, nullable: false)
                 },
                 constraints: table =>
@@ -44,7 +44,7 @@
                     FirstName = table.Column<string>(maxLength: 30, nullable: false),
                     LastName = table.Column<string>(maxLength: 30, nullable: false),
                     Username = table.Column<string>(maxLength: 30, nullable: false),
-                    Password = table.Column<string>(maxLength: 30, nullable: false),
+                    Password = table.Column<string>(nullable: false),
                     Email = table.Column<string>(maxLength: 255, nullable: false),
                     Balance = table.Column<decimal>(nullable: false)
                 },

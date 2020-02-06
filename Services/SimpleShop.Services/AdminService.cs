@@ -9,7 +9,7 @@
     using Models.Admin;
     using Utilities;
 
-    public class AdminService : IAdminService
+    public class AdminService : BaseService, IAdminService
     {
         private readonly ShopDbContext data;
         private readonly IMapper mapper;
@@ -31,11 +31,13 @@
         {
             Validator.ValidateAdmin(username, password, name);
 
+            var hashedPassword = this.GetSha256Hash(password);
+
             var admin = new Admin
             {
                 Name = name,
                 Username = username,
-                Password = password
+                Password = hashedPassword
             };
 
             this.data.Admins.Add(admin);

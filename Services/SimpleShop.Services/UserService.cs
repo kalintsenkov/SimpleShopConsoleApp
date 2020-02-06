@@ -10,7 +10,7 @@
     using Models.User;
     using Utilities;
 
-    public class UserService : IUserService
+    public class UserService : BaseService, IUserService
     {
         private readonly ShopDbContext data;
         private readonly IMapper mapper;
@@ -44,12 +44,14 @@
         {
             Validator.ValidateUser(firstName, lastName, username, password, email, balance);
 
+            var hashedPassword = this.GetSha256Hash(password);
+
             var user = new User
             {
                 FirstName = firstName,
                 LastName = lastName,
                 Username = username,
-                Password = password,
+                Password = hashedPassword,
                 Email = email,
                 Balance = balance
             };

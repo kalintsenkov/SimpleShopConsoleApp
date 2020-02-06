@@ -3,7 +3,7 @@
     using Contracts;
     using Models.User;
 
-    public class UserSessionService : IUserSessionService
+    public class UserSessionService : BaseService, IUserSessionService
     {
         private readonly IUserService userService;
 
@@ -16,8 +16,9 @@
 
         public UserServiceModel Login(string username, string password)
         {
-            var user = this.userService
-                .FindByUsernameAndPassword(username, password);
+            var hashedPassword = this.GetSha256Hash(password);
+
+            var user = this.userService.FindByUsernameAndPassword(username, hashedPassword);
 
             this.User = user;
 

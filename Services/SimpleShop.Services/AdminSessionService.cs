@@ -3,7 +3,7 @@
     using Contracts;
     using Models.Admin;
 
-    public class AdminSessionService : IAdminSessionService
+    public class AdminSessionService : BaseService, IAdminSessionService
     {
         private readonly IAdminService adminService;
 
@@ -16,8 +16,9 @@
 
         public AdminServiceModel Login(string username, string password)
         {
-            var admin = this.adminService
-                .FindByUsernameAndPassword(username, password);
+            var hashedPassword = this.GetSha256Hash(password);
+
+            var admin = this.adminService.FindByUsernameAndPassword(username, hashedPassword);
 
             this.Admin = admin;
 
